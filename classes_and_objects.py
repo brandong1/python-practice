@@ -19,6 +19,8 @@ class Student():
         else:
             print(f"{course} not found!")
 
+    def __str__(self):
+        return f"First Name: {self.first_name.capitalize()}\nLast Name: {self.last_name.capitalize()}\nCourses: {', '.join(map(str.capitalize, self.courses))}"
 
 courses_1 = ['python', 'rails', 'javascript']
 courses_2 = ['java', 'rails', 'c']
@@ -33,6 +35,8 @@ brandon.remove_course("c++")
 
 print(brandon.first_name, brandon.last_name, brandon.courses)
 
+print(brandon)
+print(john)
 # brandon green ['python', 'rails', 'javascript']
 print(john.first_name, john.last_name, john.courses)
 # john doe ['java', 'rails', 'c']
