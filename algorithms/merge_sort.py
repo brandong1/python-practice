@@ -19,7 +19,16 @@ def merge_sorted(arr1,arr2):
         j += 1
     return sorted_arr
 
+def divide_arr(arr):
+    if len(arr) < 2:
+        return arr[:]
+    else:
+        middle = len(arr)//2
+        l1 = divide_arr(arr[:middle])
+        l2 = divide_arr(arr[middle:])
+        return merge_sorted(l1,l2)
+
 # xxxxxxxxxxxxxxxx Program Execution xxxxxxxxxxxxxxxx
-l1 = [1,4,6,8,10]
-l2 = [2,3,5,7,8,9]
-print(f"Merged list: {merge_sorted(l1,l2)}")
+l = [8,6,2,5]
+print(divide_arr(l))
+
